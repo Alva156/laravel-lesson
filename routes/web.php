@@ -24,6 +24,8 @@ Route::middleware([
     Route::get('/mema', [UserController::class, 'mema'])->name('mema')->middleware('isUser:user');
     Route::get('/post/all', [PostController::class, 'index'])->name('post.all')->middleware('isAdmin:admin');
     Route::get('/user-list', [UserController::class, 'userlist'])->name('user-list')->middleware('isAdmin:admin');
+// Create
+    Route::post('/create-post', [PostController::class, 'storepost'])->name('create-post')->middleware('isAdmin:admin');
    
 
     
